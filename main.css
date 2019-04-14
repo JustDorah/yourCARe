@@ -1,0 +1,20 @@
+html{
+    font-size: 16px;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* third section area */
+[contentEditable=true]{
+    padding: 12px;
+}
+[data-placeholder]:empty:before{
+    content: attr(data-placeholder);
+    color: #888888;
+    font-style: italic;
+}

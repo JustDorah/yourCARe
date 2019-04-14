@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>yourCARe</title>
+<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<!-- css -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="grid2.css">
+</head>
+<body>
+    <div class="container grid">
+        <header class="heading">
+            <a href="index.html" id="logo">
+                <img src="images/y.png" alt="logo">
+            </a>            
+            <!-- <hr>
+            <hr> -->
+            <h3>yourCARe</h3>
+        </header>
+        <div>
+            <button class="start">Welcome</button>
+        </div>
+    </div>
+   <section class="first login">
+       <h3>Acount login</h3>
+       <form action="#">
+           <div>
+               <label for="#">Username</label>
+               <input type="text" name="name" id="#">
+           </div>
+           <div>
+                <label for="#">password</label>
+                <input type="text" name="password" id="#">
+            </div>
+            <div>
+                <input type="checkbox" name="remember-me" id="#">
+                <label for="checkbox">Remember me</label>
+                <span><a href="#">Forgot password?</a></span>
+            </div>
+            <div>
+                <a href="#"><button type="submit">login</button>
+                </a>
+            </div>
+       </form>
+   </section>
+   <section class="second home">
+       <div>
+           <h1>Welcome</h1>
+       </div>
+            <p>Please enter the following information</p>
+       <div>
+       <div>
+           <form action="#">
+                <div>
+                    <label for="#">vin number</label>
+                <input type="text" name="vinNumber" id="#">
+                </div>
+                <div>
+                    <label for="#">mileage</label>
+                    <input type="text" name="mileage" id="#">
+                </div> 
+                <div>
+                    <a href="#">
+                        <button type="submit">Enter</button>
+                    </a>
+                </div>
+           </form>
+       </div>
+   </section>
+   <section class="third car">
+        <h2>Your car information</h2>
+        <div class="generalInfo">General Information</div>
+            <div class="a">Manufaturer:</div>
+            <div class="b" contenteditable data-placeholder="Not availale"></div>
+
+            <div class="a">Model:</div>
+            <div class="b" contenteditable data-placeholder="Not availale"></div>
+
+            <div class="a">Year</div>
+            <div class="b" contenteditable data-placeholder="Not availale"></div>
+
+            <div class="a">Mileage</div>
+            <div class="b" contenteditable data-placeholder="Not availale"></div>
+            
+            <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+   </section>
+
+
+
+
+
+
+
+<!--External JS script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--Local JS script-->
+    <script src="index.js"></script>
+</body>
+</html>
