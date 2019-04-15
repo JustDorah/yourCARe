@@ -7,6 +7,22 @@ html{
 body{
     font-family: 'Raleway', sans-serif;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+}
+
+.container, section{
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;    
+}
+
+.container, .login{
+    height: 100vh;
+    margin-top: 20vh;
+}
+
+section{
+    margin-top: 5rem;
 }
 
 /* third section area */
