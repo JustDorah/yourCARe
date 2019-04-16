@@ -21,17 +21,17 @@
             <a href="index.html" id="logo">
                 <img src="images/y.png" alt="logo">
             </a>
-            <!-- <hr>
-            <hr> -->
             <h3>yourCARe</h3>
         </header>
         <div>
-            <button class="start">Welcome</button>
+            <a href="#entry">
+                <button class="start">Welcome</button>
+            </a>
         </div>
     </div>
-    <section class="first login grid">
-        <h3>Acount login</h3>
-        <form action="#">
+    <!-- <section id="login" class="first login grid">
+        <h3 >Acount login</h3>
+        <form action="#entry">
             <div>
                 <label for="#">Username</label>
                 <input type="text" name="name" id="#">
@@ -41,24 +41,25 @@
                 <input type="text" name="password" id="#">
             </div>
             <div>
-                <input type="checkbox" name="remember-me" id="#">
+                <input type="checkbox" name="remember-me" id="//">
                 <label for="checkbox">Remember me</label>
-                <span><a href="#">Forgot password?</a></span>
+                <span><a href="//">Forgot password?</a></span>
             </div>
             <div>
-                <a href="#"><button type="submit">login</button>
+                <a href="#entry">
+                    <button type="submit">login</button>
                 </a>
             </div>
         </form>
-    </section>
+    </section> -->
     <section class="second home grid">
         <div>
-            <h1>Welcome</h1>
+            <h1 id="entry">Welcome</h1>
         </div>
         <p>Please enter the following information</p>
         <div>
             <div>
-                <form action="#">
+                <form action="">
                     <div>
                         <label for="#">vin number</label>
                         <input type="text" name="vinNumber" id="#">
@@ -68,14 +69,14 @@
                         <input type="text" name="mileage" id="#">
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="#car">
                             <button type="submit">Enter</button>
                         </a>
                     </div>
                 </form>
             </div>
     </section>
-    <section class="third car grid">
+    <section id="car" class="third car grid">
         <h2>Your car information</h2>
         <div class="generalInfo">
             <h3>General Information</h3>

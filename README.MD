@@ -14,6 +14,6 @@
 
   
 ---
-<sup>+</sup>Maintenance information is based on +/- 10000miles of submitted mileage
+<sup>+</sup>Maintenance information is based on +/- 10000miles of submitted mileage  
 <sup>++</sup>Sometimes github is weird. If the proposed link doesn't work try this one.
 https://justdorah.github.io/yourCARe/index
