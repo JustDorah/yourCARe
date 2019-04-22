@@ -36,3 +36,6 @@ section{
     font-style: italic;
 }
 
+.hidden{
+    display: none;
+}
