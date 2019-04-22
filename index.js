@@ -40,12 +40,22 @@ function getCarInfo(vin, mileage) {
             }
             throw new Error(response.statusText);
         })
-        .then(responseJson => console.log(responseJson))
+        .then(responseJson => {
+            //console.log(responseJson)
+            displayGenCar(responseJson);
+        })
         .catch(err => {
-            console.log(err.message)
+            console.log(err.message);
         });
+    // const genCarInfo = responseJson;
+    // console.log(genCarInfo);
+    // displayGenCar(genCarInfo);
+}
 
+function displayGenCar(responseJson){
+    console.log('displayGenCar is working!!');
 
+    
 }
 
 $(appStart());
