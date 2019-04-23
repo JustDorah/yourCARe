@@ -86,7 +86,66 @@ function displayGenCar(responseJson, mileage){
     <p><strong>Year</strong>: ${year.Value}</p>
     <p><strong>Mileage</strong>: ${mileage}</p>`
     );
-
 }
+
+//data display from response.js
+//console.log(returned.data[0].desc);
+
+const data = returned.data;
+//console.log(data);
+
+let holder = {};
+let output = [];
+let newArr =[];
+
+function removeDublicates(data){
+    let nData = [];
+    let i;
+    for(i = 0; i< data.length; i++){
+        if(nData.indexOf(data[i].desc) == -1){
+            nData.push(data[i].desc);
+        }       
+    }
+    group(nData);
+    return nData;
+    
+}
+console.log(removeDublicates(data));
+
+function group(nData){
+    let i;
+    for(i = 0; i < nData.length; i++){
+        console.log(nData[i]);
+    }
+}
+
+/*
+data.forEach(function(item){
+    let collection = [];
+    
+     let existing = data.filter(function(v, i){
+        //console.log(item.desc);
+        return v.desc == item.desc;
+    });
+    console.log(existing);
+   /* 
+    if(existing.length){
+        let existingIndex = data.indexOf(existing[0]);
+        console.log(existingIndex);
+        //console.log(data[existingIndex].desc, 'data');
+        output = data[existingIndex].desc.concat(item.due_mileage);
+        console.log(item.desc, 'data');
+        //console.log(existing);
+    }
+   if(typeof item.desc == 'string'){
+        item.desc = [item.desc];
+        console.log(item.desc, 'item.desc');
+        output.push(item);        
+    }
+    //console.log(output);
+    //console.log(existing);
+});
+*/
+
 
 $(appStart());
