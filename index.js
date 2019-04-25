@@ -99,107 +99,12 @@ function displayGenCar(responseJson, mileage) {
 //console.log(returned.data[0].desc);
 
 const data = returned.data;
-//console.log(data);
-
-let holder = {};
-let output = [];
-let newArr = [];
-let nData = [];
-
-function removeDublicates(d) {
-
-    let i;
-    for (i = 0; i < data.length; i++) {
-        if (nData.indexOf(data[i].desc) == -1) {
-            nData.push(data[i].desc);
-        }
-    }
+console.log(data);
+const condensed = [];
+console.log(data[0].desc);
+console.log(data[0].hasOwnProperty('desc'));
 
 
-
-    return nData;
-    //loop over data
-    //push description into the array
-    //if description
-
-
-}
-removeDublicates(data);
-//console.log(nData[0]);
-//console.log(removeDublicates(nData));
-group(nData);
-
-function group(nData) {
-    console.log('group works');
-
-    //console.log(data);
-
-    //data.forEach(function(){
-    let wantedData = [];
-    let i = 0;
-    // console.log(data[1].desc)
-    //typeof(wantedData);
-    //console.log(typeof (wantedData));
-
-    let desc = data[i].desc;
-    let mileage = data[i].due_mileage;
-        
-    wantedData[i] = {
-        'name': `${desc}`,
-        'mileage': [mileage]        
-    };
-
-
-    for (i = 0; i < data.length; i++) {
-        console.log(wantedData[i].mileage);
-       
-        if(wantedData[i].name == data[i].desc){
-
-            if(wantedData[i].mileage == data[i].due_mileage){
-                wantedData[i].mileage.push(data[i].due_mileage);
-            }
-        }
-      
-    }
-
-console.log(wantedData[0].mileage);
-    
-
-        
-    
-        //wantedData[0].mileage.push(10000);
-   // console.log(wantedData[4].mileage, wantedData[4].name);
-
-
-}
-
-/*
-data.forEach(function(item){
-    let collection = [];
-    
-     let existing = data.filter(function(v, i){
-        //console.log(item.desc);
-        return v.desc == item.desc;
-    });
-    console.log(existing);
-   /* 
-    if(existing.length){
-        let existingIndex = data.indexOf(existing[0]);
-        console.log(existingIndex);
-        //console.log(data[existingIndex].desc, 'data');
-        output = data[existingIndex].desc.concat(item.due_mileage);
-        console.log(item.desc, 'data');
-        //console.log(existing);
-    }
-   if(typeof item.desc == 'string'){
-        item.desc = [item.desc];
-        console.log(item.desc, 'item.desc');
-        output.push(item);        
-    }
-    //console.log(output);
-    //console.log(existing);
-});
-*/
 
 
 $(appStart());
