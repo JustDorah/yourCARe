@@ -116,9 +116,15 @@ for(let obj in data){
                 duplicate = true;
             }
         }
+    }    
+    if(!duplicate){
+        let newObj = {};
+        newObj.desc = data[obj].desc;
+        newObj.mileage = [data[obj].due_mileage];
+        condensed.push(newObj);
     }
 }
 
-
+console.log(condensed);
 
 $(appStart());
