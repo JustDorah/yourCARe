@@ -98,12 +98,26 @@ function displayGenCar(responseJson, mileage) {
 //data display from response.js
 //console.log(returned.data[0].desc);
 
-const data = returned.data;
+const data = returned.data;//data in json
 console.log(data);
 const condensed = [];
 console.log(data[0].desc);
 console.log(data[0].hasOwnProperty('desc'));
 
+//push objects into condensed, but not duplicate objects
+//see if current object has same mileage value as duplicate and push mileage value into it if it doesn't
+for(let obj in data){
+    let duplicate = false; // flag: add new obj or note?
+    
+    for (let i = 0; i < condensed.length; i++){
+        if(condensed[i].hasOwnProperty('desc')){
+            if (condensed[i].desc == data[obj].desc){
+                condensed[i].mileage.push(data[obj].due_mileage);
+                duplicate = true;
+            }
+        }
+    }
+}
 
 
 
