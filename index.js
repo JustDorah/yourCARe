@@ -135,12 +135,16 @@ displayCarMaintenance(condensed);
 function displayCarMaintenance(condensed){
     console.log(condensed);
     for(let i = 0; i < condensed.length; i++){
+        let mileage = condensed[i].mileage;
         $('.displayMaintenance').append(`<tr>
         <td>${condensed[i].desc}</td>
-        <td>${condensed[i].mileage}</td>
+        <td class="displayMileages"></td>
         </tr>`);
-        console.log(condensed[i].mileage);  
-    };        
+        for( let j = 0; j < mileage.length; j++){
+            $('tbody .displayMileages').append(`<td>${mileage[j]}</td>`);
+        console.log(condensed[i].mileage); 
+        }         
+    };    
 }
 
 
