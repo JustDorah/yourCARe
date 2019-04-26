@@ -133,7 +133,9 @@ function getCarMaintenance(vin, milesDriven) {
         throw new Error(response);
     })
     .then(responseJson => {
-        console.log(responseJson);//cleanOutData(responseJson)
+        //passes responseJson to cleanOutData function
+        //Calls cleanOutData function
+        cleanOutData(responseJson);
         //console.log(responseJson.message.message, '!!!!!');
     })
     .catch(err => { console.log('error', err)}
@@ -141,12 +143,9 @@ function getCarMaintenance(vin, milesDriven) {
 
 }
 
-
-/*
-
-
-
-    const data = returned.data; //data in json
+function cleanOutData(responseJson){
+    
+    const data = responseJson.data; //data in json
     console.log(data);
     const condensed = [];
     console.log(data[0].desc);
@@ -173,9 +172,8 @@ function getCarMaintenance(vin, milesDriven) {
             condensed.push(newObj);
         }
     }
-    displayCarMaintenance(condensed); */
-
-
+    displayCarMaintenance(condensed);
+}
 
 
 function displayCarMaintenance(condensed) {
