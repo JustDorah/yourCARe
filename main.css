@@ -1,5 +1,5 @@
 html{
-    font-size: 16px;
+    font-size: 10px;
 }
 *{
     box-sizing: border-box;
@@ -8,18 +8,19 @@ body{
    /* font-family: 'Raleway', sans-serif;*/
     font-family: 'Montserrat', sans-serif;
     width: 100%;
+    margin: 0;
 
 }
 
 .container, section{
     margin-left: auto;
     margin-right: auto;
-    width: 20em;    
+    width: 30em;    
 }
 
 .container, .login{
     height: 100vh;
-    margin-top: 20vh;
+    margin-top: 15vh;
 }
 
 section{
@@ -38,4 +39,8 @@ section{
 
 .hidden{
     display: none;
+}
+
+table, th, td,{
+    border: 1px solid black;
 }
