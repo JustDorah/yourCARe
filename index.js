@@ -97,6 +97,7 @@ function displayGenCar(responseJson, milesDriven) {
 
 
     $('div .generalInfo').addClass('hidden');
+    $('div .displayGenInfo').empty();
     $('div .displayGenInfo').append(`
     <p><strong>Manufacturer</strong>: ${manufacturer.Value}</p>
     <p><strong>Make</strong>: ${make.Value}</p>
@@ -179,6 +180,8 @@ function cleanOutData(responseJson) {
 }
 
 function displayCarMaintenance(condensed) {
+
+    $('.displayMaintenance').empty();
     console.log(condensed);
     for (let i = 0; i < condensed.length; i++) {
 
