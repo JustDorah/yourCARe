@@ -12,6 +12,17 @@ const genInfoBaseUrl = 'https://vpic.nhtsa.dot.gov/api/vehicles/decodevinextende
 
 function appStart() {
     console.log('app has started');
+    landingPage();
+    submitVinMileageInfo();
+}
+
+function landingPage() {
+    $('.container').on('click', '.welcomeBtn', function (event) {
+        $('.container').remove();
+    });
+}
+
+function submitVinMileageInfo() {
     $('#vinForm').submit(function (event) {
         event.preventDefault();
         const vin = $('#vinForm #enterVin').val();
@@ -19,11 +30,10 @@ function appStart() {
         //console.log(vin, milesDriven);
 
         getCarInfo(vin, milesDriven);
-
         getCarMaintenance(vin, milesDriven);
+        $('.second').removeClass('hidden');
     });
 }
-
 //gets general car information
 function getCarInfo(vin, milesDriven) {
     /* const params = {
@@ -99,8 +109,6 @@ function displayGenCar(responseJson, milesDriven) {
 //console.log(returned.data[0].desc);
 
 function getCarMaintenance(vin, milesDriven) {
-    
-
 
     const headers = {
         'Content-Type': 'application/json',
@@ -113,38 +121,33 @@ function getCarMaintenance(vin, milesDriven) {
         method: 'GET',
         headers
     };
-    /*
-    const maintenanceBaseURL = 'https://api.carmd.com/v3.0/maint';
-
-    const forNonProductionHelp = 'https://cors-anywhere.herokuapp.com/'; */
-
-    
+   
     const maintInfoQuery = `vin=${vin}&mileage=${milesDriven}`;
-    
+
     const urlMaint = forNonProductionHelp + maintenanceBaseURL + '?' + maintInfoQuery;
 
     fetch(urlMaint, myInit)
-    .then(response => {
-        if(response.ok){
-            
-            return response.json();
-        }
-        //console.log(response);
-        throw new Error(response);
-    })
-    .then(responseJson => {
-        //passes responseJson to cleanOutData function
-        //Calls cleanOutData function
-        cleanOutData(responseJson);
-        //console.log(responseJson.message.message, '!!!!!');
-    })
-    .catch(err => { console.log('error', err)}
-    );
+        .then(response => {
+            if (response.ok) {
 
+                return response.json();
+            }
+            //console.log(response);
+            throw new Error(response);
+        })
+        .then(responseJson => {
+            //passes responseJson to cleanOutData function
+            //Calls cleanOutData function
+            cleanOutData(responseJson);
+            //console.log(responseJson.message.message, '!!!!!');
+        })
+        .catch(err => {
+            console.log('error', err)
+        });
 }
 
-function cleanOutData(responseJson){
-    
+function cleanOutData(responseJson) {
+
     const data = responseJson.data; //data in json
     console.log(data);
     const condensed = [];
@@ -174,7 +177,6 @@ function cleanOutData(responseJson){
     }
     displayCarMaintenance(condensed);
 }
-
 
 function displayCarMaintenance(condensed) {
     console.log(condensed);

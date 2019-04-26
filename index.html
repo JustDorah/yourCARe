@@ -24,247 +24,79 @@
             <h3>yourCARe</h3>
         </header>
         <div>
-            <a href="#entry">
-                <button class="start">Welcome</button>
-            </a>
+            <button class="welcomeBtn">Welcome</button>
         </div>
     </div>
-    <!-- <section id="login" class="first login grid">
-        <h3 >Acount login</h3>
-        <form action="#entry">
+    <main>
+        <section class="first home grid">
             <div>
-                <label for="#">Username</label>
-                <input type="text" name="name" id="#">
+                <h1 id="entry">Welcome</h1>
             </div>
+            <p>Please enter the following information</p>
             <div>
-                <label for="#">password</label>
-                <input type="text" name="password" id="#">
-            </div>
-            <div>
-                <input type="checkbox" name="remember-me" id="//">
-                <label for="checkbox">Remember me</label>
-                <span><a href="//">Forgot password?</a></span>
-            </div>
-            <div>
-                <a href="#entry">
-                    <button type="submit">login</button>
-                </a>
-            </div>
-        </form>
-    </section> -->
-    <section class="second home grid">
-        <div>
-            <h1 id="entry">Welcome</h1>
-        </div>
-        <p>Please enter the following information</p>
-        <div>
-            <div>
-                <form action="" id="vinForm">
-                    <div>
-                        <label for="vinNumber">vin number</label>
-                        <input type="text" name="vinNumber" id="enterVin" value="2CNALDEC9B6425535">
-                    </div>
-                    <div>
-                        <label for="mileage">mileage</label>
-                        <input type="text" name="mileage" id="enterMileage"
-                        value="65000"
-                        >
-                    </div>
-                    <div>
-                        <a href="#car">
-                            <button type="submit">Enter</button>
-                        </a>
-                    </div>
-                </form>
-            </div>
-    </section>
-    <section id="car" class="third car grid">
-        <h2>Your car information</h2>
-        <div class="generalInfo">
-            <h3>General Information</h3>
+                <div>
+                    <form id="vinForm">
+                        <div>
+                            <label for="vinNumber">vin number</label>
+                            <input type="text" name="vinNumber" id="enterVin" value="2CNALDEC9B6425535" required>
+                        </div>
+                        <div>
+                            <label for="mileage">mileage</label>
+                            <input type="text" name="mileage" id="enterMileage" value="65000" required>
+                        </div>
+                        <div>
+                            <a href="#car">
+                                <button type="submit">Enter</button>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+        </section>
+        <section id="car" class="second car grid hidden">
+            <h2>Your car information</h2>
             <div class="generalInfo">
-                <div class="a">Manufaturer:</div>
-                <div class="b" contenteditable data-placeholder="Not availale"></div>
+                <h3>General Information</h3>
+                <div class="generalInfo">
+                    <div class="a">Manufaturer:</div>
+                    <div class="b" contenteditable data-placeholder="Not availale"></div>
 
-                <div class="a">Model:</div>
-                <div class="b" contenteditable data-placeholder="Not availale"></div>
+                    <div class="a">Model:</div>
+                    <div class="b" contenteditable data-placeholder="Not availale"></div>
 
-                <div class="a">Year</div>
-                <div class="b" contenteditable data-placeholder="Not availale"></div>
+                    <div class="a">Year</div>
+                    <div class="b" contenteditable data-placeholder="Not availale"></div>
 
-                <div class="a">Mileage</div>
-                <div class="b" contenteditable data-placeholder="Not availale"></div>
-            </div>
-            <div class="displayGenInfo">       </div>
-        </div>
-        <div class="services">
-            <h3>Your maintenance</h3>
-            <p>Here is when your maintenance is due. The information will be +/- 10000miles based on the mileage
-                provided</p>
-            
-            <div class="">
-                <table>
-                    <thead>
-                        <tr>
-                        Your Next Scheduled Maintenance
-                        <th>Description</th>
-                        <th>Mileages Due</th>
-                    </tr>
-                    </thead>
-                    <tbody class="displayMaintenance">
-
-                    </tbody> 
-                </table>
-
-            </div>
-
-            <div class="hidden">Engine care
-                <div>
-                    <p>Oil/Oil Filter</p>
-                    <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                    <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
+                    <div class="a">Mileage</div>
+                    <div class="b" contenteditable data-placeholder="Not availale"></div>
                 </div>
+                <div class="displayGenInfo"> </div>
+            </div>
+            <div class="services">
+                <h3>Your maintenance</h3>
+                <p>Your maintenance is due is shown within a +/- 10000 mile range based on the mileage you have provided
+                </p>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                Your Next Scheduled Maintenance
 
-                <div>
-                    <p>Engine coolant</p>
-                    <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                    <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-                </div>
-                <div>
-                    <p>Drive belts</p>
-                    <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                    <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
+                                <th>Description</th>
+                                <th>Mileages Due</th>
+                            </tr>
+                        </thead>
+                        <tbody class="displayMaintenance">
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="hidden">Ignition system
-                <div>
-                    <p>Battery</p>
-                    <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                    <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-                </div>
-                <div>
-                    <p>Spark plugs</p>
-                    <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                    <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-                </div>
-            </div>
-            <div class="hidden">Fuel system
-                <div>
-                    <p>Air Filter</p>
-                    <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                    <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-                </div>
-                <div>
-                    <p>Oil</p>
-                    <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                    <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-                </div>
-            </div>
-            <div class="hidden">Chassis and Body</div>
-            <div class="hidden">
-                <p>Brake lines, hoses, and connections</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
-            <div class="hidden">
-                <p>Disk brakes</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
-            <div class="hidden">
-                <p>Tire (Rotation)</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
-            <div class="hidden">
-                <p>Seering and linkages</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
-            <div class="hidden">
-                <p>Front and rear suspension, ball joints and wheel bearing axial play</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
-            <div class="hidden">
-                <p>Driveshaft dust boots</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
-            <div class="hidden">
-                <p>Bolts and nuts on chassis and body</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
-            <div class="hidden">
-                <p>Exhaust system and heat shields</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
-            <div class="hidden">
-                <p>All locks and hinges</p>
-                <p>Last service: <span contenteditable data-placeholder="Not availale"></span></p>
-                <p>Next service: <span contenteditable data-placeholder="Not availale"></span></p>
-            </div>
+    </main>
+    <!--External JS script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Local JS script-->
+    <script src="response.js"></script>
+    <script src="index.js"></script>
 
-        </div>
-        <div></div>
-        <!--         
-    </section>
-    <section class="howVideos grid">
-        <div>
-            <h3>Explanatory Videos</h3>
-        </div>
-        <div>
-            <p>Lorem Ipsum</p>
-            <iframe width="100" height="70" src="https://www.youtube.com/embed/7X8II6J-6mU" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"             allowfullscreen></iframe>
-        </div>
-        <div>
-            <p>Lorem Ipsum</p>
-            <iframe width="100" height="70" src="https://www.youtube.com/embed/7X8II6J-6mU" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div>
-            <p>Lorem Ipsum</p>
-            <iframe width="100" height="70" src="https://www.youtube.com/embed/7X8II6J-6mU" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div>
-            <p>Lorem Ipsum</p>
-            <iframe width="100" height="70" src="https://www.youtube.com/embed/7X8II6J-6mU" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-        </div>
-    </section>
-    <section class="location grid">
-        <h3>Find a Garage close to you</h3>
-        <div>
-            <p>Krishna Motor Garage</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28019.61387676045!2d77.20145910501502!3d28.6162202698754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd36df0d730b%3A0xf7a2257e4a30c862!2sKrishna+Motor+Garage!5e0!3m2!1sen!2sus!4v1555348059964!5m2!1sen!2sus" width="100" height="80" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        <div>
-            <p>Professional Auto Centre</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9938.301782155577!2d-0.13215073022460938!3d51.48430680000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604f1e794ac3b%3A0xcf8d389b616fda1f!2sProfessional+Auto+Centre!5e0!3m2!1sen!2sus!4v1555348296490!5m2!1sen!2sus"width="100" height="80" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        <div>
-            <p>Boxer Motor Co Ltd</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79440.5041436705!2d-0.7810075417968689!3d51.522099499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487662d7b987d65f%3A0xdb6b4e9519c4865c!2sBoxer+Motor+Co+Ltd!5e0!3m2!1sen!2sus!4v1555348394252!5m2!1sen!2sus" width="100" height="80" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        <div>
-            <p>Ross Duncan Auto Services CC</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d394608.850200853!2d28.213650839386844!3d-25.741111992103978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956e0d19d1c067%3A0x71772178ddc94a14!2sRoss+Duncan+Auto+Services+CC!5e0!3m2!1sen!2sus!4v1555348522581!5m2!1sen!2sus" width="100" height="80" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-    </section> -->
-
-        <!--External JS script-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!--Local JS script-->
-        <script src="response.js"></script>
-        <script src="index.js"></script>
-        
 </body>
 
 </html>
