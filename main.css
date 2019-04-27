@@ -1,22 +1,131 @@
+/* MAIN STYLES */
 html{
-    font-size: 10px;
+    font-size: 12px;
 }
+
 *{
     box-sizing: border-box;
 }
 body{
-   /* font-family: 'Raleway', sans-serif;*/
-    font-family: 'Montserrat', sans-serif;
-    width: 100%;
+   font-family: 'Raleway', sans-serif;
+   font-size: 1em;
+   font-weight: 400;
     margin: 0;
-
+    /* background-color: #333333; */
+    text-align: center;
+    /* width: 100%;
+     */
 }
 
-.container, section{
+
+h1,
+h2,
+h3{
+    margin: 0;
+    padding: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    margin: 0;
+    padding: 1em;
+}
+
+button{
+    /* display: block; puts it on its own line but spans the whole line*/
+    display: inline-block; /* it's own line but doesn't span the whole line*/
+    margin: .5em 0;
+    background-color: azure;
+    color: #666666; /* #ffffff; */
+    text-decoration: none;
+    padding: 1em 2em;
+    border: 1px solid #666666;
+}
+button:hover{
+    background: #eaeaea;
+    color: #333333;
+}
+
+/*Header Stylings*/
+header{
+    background-color: #333333;
+    color: lightgrey;
+    text-align: center;/*not necessary but possibly helpful*/
+    min-height: 450px;
+}
+
+header .content-wrap{
+    padding: 0 1.5em;
+}
+a .logo{
+    display: inline-block;
+}
+
+/* FIRST SECTION STYLINGS */
+
+.first{
+    background: #eaeaea;
+    color: #333333;
+    min-height: 450px;
+}
+
+input{
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid #3f3f3f;
+    color: #575757;
+}
+
+input #enterVin, 
+input #enterMileage{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* SECOND SECTION */
+
+.second{
+    background: #525151;
+    color: #ffffff;
+    min-height: 450px;
+}
+
+[data-placeholder]:empty:before{
+    content: attr(data-placeholder);
+    color: #ada6a6;
+    font-style: italic;
+}  
+    
+.services{
+    background: #eaeaea;
+    color: #333333;
+    min-height: 450px;
+    text-align: center;
+}
+
+.para{
+    width: 70vw;
+    margin: auto;
+}
+
+table{
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td{
+    border: 1px solid #333333;
+}
+
+
+/* .container, section{
     margin-left: auto;
     margin-right: auto;
     width: 30em;    
-}
+} 
 
 .container, .login{
     height: 100vh;
@@ -26,17 +135,10 @@ body{
 section{
     margin-top: 5rem;
 }
+*/
+ 
 
-/* third section area */
-[contentEditable=true]{
-    padding: 12px;
-}
-[data-placeholder]:empty:before{
-    content: attr(data-placeholder);
-    color: #888888;
-    font-style: italic;
-}
-
+/*
 .hidden{
     display: none;
 }
@@ -44,3 +146,4 @@ section{
 table, th, td,{
     border: 1px solid black;
 }
+*/

@@ -16,70 +16,74 @@
 </head>
 
 <body>
-    <div class="container grid">
-        <header class="heading">
+    <header class="heading grid">
+        <div class="content-wrap">
             <a href="index.html" id="logo">
-                <img src="images/y.png" alt="logo">
+                <img src="images/y.png" alt="logo" class="logo">
             </a>
             <h3>yourCARe</h3>
-        </header>
-        <div>
-            <button class="welcomeBtn">Welcome</button>
+            <div>
+                <button class="welcomeBtn">Welcome</button>
+            </div>
         </div>
-    </div>
+    </header>
+
     <main>
-        <section class="first home grid">
+        <section class="first grid">
             <div>
                 <h1 id="entry">Welcome</h1>
+                <p>Please enter the following information</p>
             </div>
-            <p>Please enter the following information</p>
+
             <div>
-                <div>
-                    <form id="vinForm">
-                        <div>
-                            <label for="vinNumber">vin number</label>
+                <form class="vmForm" id="vinForm">
+                    <div class="vinNum">
+                        <label for="vinNumber"><span>VIN Number: </span>
                             <input type="text" name="vinNumber" id="enterVin" value="2CNALDEC9B6425535" required>
-                        </div>
-                        <div>
-                            <label for="mileage">mileage</label>
+                        </label>
+                    </div>
+                    <div class="miles">
+                        <label for="mileage"><span>Mileage: </span>
                             <input type="text" name="mileage" id="enterMileage" value="65000" required>
-                        </div>
-                        <div>
-                            <a href="#car">
-                                <button type="submit">Enter</button>
-                            </a>
-                        </div>
-                    </form>
-                </div>
+                        </label>
+                    </div>
+                    <div>
+                        <a href="#car">
+                            <button type="submit">Enter</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
         </section>
-        <section id="car" class="second car grid hidden">
-            <h2>Your car information</h2>
+        <section id="car" class="second car grid ">
+            <!--hidden -->
+            <h3>General Information</h3>
             <div class="generalInfo">
-                <h3>General Information</h3>
-                <div class="generalInfo">
-                    <div class="a">Manufaturer:</div>
-                    <div class="b" contenteditable data-placeholder="Not availale"></div>
+                <div class="a">Manufaturer:</div>
+                <div class="b" contenteditable="false" data-placeholder="Not availale"></div>
 
-                    <div class="a">Model:</div>
-                    <div class="b" contenteditable data-placeholder="Not availale"></div>
+                <div class="a">Model:</div>
+                <div class="b" contenteditable="false" data-placeholder="Not availale"></div>
 
-                    <div class="a">Year</div>
-                    <div class="b" contenteditable data-placeholder="Not availale"></div>
+                <div class="a">Year</div>
+                <div class="b" contenteditable="false" data-placeholder="Not availale"></div>
 
-                    <div class="a">Mileage</div>
-                    <div class="b" contenteditable data-placeholder="Not availale"></div>
-                </div>
-                <div class="displayGenInfo"> </div>
+                <div class="a">Mileage</div>
+                <div class="b" contenteditable="false" data-placeholder="Not availale"></div>
+            </div>
+            <div class="displayGenInfo"> </div>
             </div>
             <div class="services">
                 <h3>Your maintenance</h3>
-                <p>Your maintenance is due is shown within a +/- 10000 mile range based on the mileage you have provided
+                <div class="para">
+                    <p>Your maintenance is due is shown within a +/- 10000 mile range based on the mileage you have provided
                 </p>
+            </div>
                 <div>
-                    <table>
+                    <table class="table grid">
                         <thead>
                             <tr>
-                                Your Next Scheduled Maintenance
+                               <span>Your Next Scheduled Maintenance</span> 
 
                                 <th>Description</th>
                                 <th>Mileages Due</th>
