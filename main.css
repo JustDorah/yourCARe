@@ -8,13 +8,16 @@ html{
 }
 body{
    font-family: 'Raleway', sans-serif;
-   font-size: 1em;
+   font-size: 1rem;
    font-weight: 400;
     margin: 0;
     /* background-color: #333333; */
     text-align: center;
     /* width: 100%;
      */
+     min-width: 410px;
+    /*padding: 0 1rem;
+    background-color: #333333;*/
 }
 
 
@@ -104,22 +107,51 @@ input #enterMileage{
 }
 
 .para{
-    width: 70vw;
+    width: 65vw;
     margin: auto;
 }
 
+.span-table{
+    font-weight: bolder;
+}
+
 table{
+    margin-top: 1px;
     table-layout: auto;
-    width: 100%;
+    width: 99%;
     border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table,
 th,
 td{
     border: 1px solid #333333;
+    text-align: left;
+    padding: .5em;
 }
 
+th{
+    height: 30px;
+    text-align: left;
+}
+
+th:hover{
+    transform: scale(1.1);
+}
+
+td.desc-cell{
+    max-width: 270px;
+}
+td.miles-cell{
+    border:none;
+    padding: .3em;
+}
+
+th, tr:nth-child(even){
+    background-color: rgb(199, 199, 187);
+}
 
 /* .container, section{
     margin-left: auto;
