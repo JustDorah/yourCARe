@@ -7,175 +7,59 @@ html{
     box-sizing: border-box;
 }
 body{
-   font-family: 'Raleway', sans-serif;
-   font-size: 1rem;
-   font-weight: 400;
+    background: rgba(0, 0, 0, 1);
     margin: 0;
-    /* background-color: #333333; */
-    text-align: center;
-    /* width: 100%;
-     */
-     min-width: 410px;
-    /*padding: 0 1rem;
-    background-color: #333333;*/
-}
-
-
-h1,
-h2,
-h3{
-    margin: 0;
-    padding: 1em;
-    font-family: 'Montserrat', sans-serif;
-}
-
-p{
-    margin: 0;
-    padding: 1em;
-}
-
-button{
-    /* display: block; puts it on its own line but spans the whole line*/
-    display: inline-block; /* it's own line but doesn't span the whole line*/
-    margin: .5em 0;
-    background-color: azure;
-    color: #666666; /* #ffffff; */
-    text-decoration: none;
-    padding: 1em 2em;
-    border: 1px solid #666666;
-}
-button:hover{
-    background: #eaeaea;
-    color: #333333;
-}
-
-/*Header Stylings*/
-header{
-    background-color: #333333;
-    color: lightgrey;
-    text-align: center;/*not necessary but possibly helpful*/
-    min-height: 450px;
-}
-
-header .content-wrap{
-    padding: 0 1.5em;
-}
-a .logo{
-    display: inline-block;
-}
-
-/* FIRST SECTION STYLINGS */
-
-.first{
-    background: #eaeaea;
-    color: #333333;
-    min-height: 450px;
-}
-
-input{
-    border: none;
-    outline: none;
-    background: none;
-    border-bottom: 1px solid #3f3f3f;
-    color: #575757;
-}
-
-input #enterVin, 
-input #enterMileage{
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* SECOND SECTION */
-
-.second{
-    background: #525151;
     color: #ffffff;
-    min-height: 450px;
+    font-family: 'Raleway', sans-serif;
 }
 
-[data-placeholder]:empty:before{
-    content: attr(data-placeholder);
-    color: #ada6a6;
-    font-style: italic;
-}  
-    
-.services{
-    background: #eaeaea;
-    color: #333333;
-    min-height: 450px;
-    text-align: center;
-}
-
-.para{
-    width: 65vw;
-    margin: auto;
-}
-
-.span-table{
-    font-weight: bolder;
-}
-
-table{
-    margin-top: 1px;
-    table-layout: auto;
-    width: 99%;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-table,
-th,
-td{
-    border: 1px solid #333333;
-    text-align: left;
-    padding: .5em;
-}
-
-th{
-    height: 30px;
-    text-align: left;
-}
-
-th:hover{
-    transform: scale(1.1);
-}
-
-td.desc-cell{
-    max-width: 270px;
-}
-td.miles-cell{
-    border:none;
-    padding: .3em;
-}
-
-th, tr:nth-child(even){
-    background-color: rgb(199, 199, 187);
-}
-
-/* .container, section{
-    margin-left: auto;
-    margin-right: auto;
-    width: 30em;    
-} 
-
-.container, .login{
+.heading::after{
+    content: '';
     height: 100vh;
-    margin-top: 15vh;
+    width: 100%;
+    background: url(images/car1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    transition: all 1000ms;    
+}
+.heading:hover::after{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
 }
 
-section{
-    margin-top: 5rem;
-}
-*/
- 
-
-/*
-.hidden{
-    display: none;
+.heading:hover .content{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
 }
 
-table, th, td,{
-    border: 1px solid black;
+.content{
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    /* margin-top: 50px; */
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
 }
-*/
+
+img.logo{
+    height: 160px;
+    width: 69px;
+}
+
+.content .title{
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+
+.content .text{
+    line-height: 1.7;
+    margin-top: 1rem;
+}

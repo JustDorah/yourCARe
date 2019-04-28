@@ -10,24 +10,30 @@
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Raleway:100,200,300,400,500,600,700,800,900"
         rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- css -->
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="grid.css">
 </head>
 
 <body>
-    <header class="heading grid">
-        <div class="content-wrap">
-            <a href="index.html" id="logo">
-                <img src="images/y.png" alt="logo" class="logo">
-            </a>
-            <h3>yourCARe</h3>
-            <div>
-                <button class="welcomeBtn">Welcome</button>
+    <div class="about grid">  
+        <header class="heading grid">
+            <div class="content">
+                <a href="index.html" id="logo">
+                    <img src="images/y.png" alt="logo" class="logo">
+                </a>
+                <h3 class="title">yourCARe</h3>
+                <p class="text">Access your next manufacturer based maintenance schedule using your vin number and current mileage</p>
+                <div>
+                    <button class="welcomeBtn">Welcome</button>
+                </div>
             </div>
-        </div>
-    </header>
-
+        </header>
+    </div>  
+    <!--  -->
     <main>
         <section class="first grid">
             <div>
@@ -95,11 +101,20 @@
                 </div>
             </div>
     </main>
+    <footer class="center">
+        <div class="tech">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js-square"></i>
+        </div>
+        <p>yourCARe &copy; 2019</p>            
+    </footer>
     <!--External JS script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Local JS script-->
     <script src="response.js"></script>
     <script src="index.js"></script>
+    
 
 </body>
 
