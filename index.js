@@ -1,4 +1,5 @@
-'use strict';
+"use strict";
+//https://stackoverflow.com/questions/4462478/jslint-is-suddenly-reporting-use-the-function-form-of-use-strict
 
 //I can get the maintenance schedule from here
 const maintenanceBaseURL = 'https://api.carmd.com/v3.0/maint';
@@ -14,6 +15,7 @@ function appStart() {
     console.log('app has started');
     landingPage();
     submitVinMileageInfo();
+    cleanOutData();
 }
 
 function landingPage() {
@@ -62,6 +64,7 @@ function getCarInfo(vin, milesDriven) {
 }
 
 //displays general car information
+//fix - display a problem if wrong vin entered.
 function displayGenCar(responseJson, milesDriven) {
     console.log('displayGenCar is working!!');
 
@@ -95,15 +98,28 @@ function displayGenCar(responseJson, milesDriven) {
     //console.log(year.Value, 'year');
     //console.log(milesDriven, 'mileage');
 
+//Remove empty general info
+    $('section .generalInfo').addClass('hidden');
+    $('section .generalInfo').removeClass('grid2');
+//Clear any previous info in display gen info 
+    $('section .displayGenInfo').empty();
 
-    $('div .generalInfo').addClass('hidden');
-    $('div .displayGenInfo').empty();
-    $('div .displayGenInfo').append(`
-    <p><strong>Manufacturer</strong>: ${manufacturer.Value}</p>
-    <p><strong>Make</strong>: ${make.Value}</p>
-    <p><strong>Model</strong>: ${model.Value}</p>
-    <p><strong>Year</strong>: ${year.Value}</p>
-    <p><strong>Mileage</strong>: ${milesDriven}</p>`);
+//add grid2 to display gen info
+$('section .displayGenInfo').addClass('grid3');
+//display gen info
+    $('.displayGenInfo').removeClass('hidden');
+
+    $('section .displayGenInfo').append(`
+    <div class="a a1"><strong>Manufacturer</strong>:</div> 
+    <div class="b b1"> ${manufacturer.Value}</div>
+    <div class="a a2"><strong>Make</strong>:</div> 
+    <div class="b b2"> ${make.Value}</div>
+    <div class="a a3"><strong>Model</strong>:</div> 
+    <div class="b b3"> ${model.Value}</div>
+    <div class="a a4"><strong>Year</strong>:</div> 
+    <div class="b b4"> ${year.Value}</div>
+    <div class="a a5"> <strong>Mileage</strong>:</div> 
+    <div class="b b5"> ${milesDriven}</div>`);
 }
 
 //data display from response.js
@@ -126,7 +142,7 @@ function getCarMaintenance(vin, milesDriven) {
     const maintInfoQuery = `vin=${vin}&mileage=${milesDriven}`;
 
     const urlMaint = forNonProductionHelp + maintenanceBaseURL + '?' + maintInfoQuery;
-
+/*
     fetch(urlMaint, myInit)
         .then(response => {
             if (response.ok) {
@@ -144,12 +160,13 @@ function getCarMaintenance(vin, milesDriven) {
         })
         .catch(err => {
             console.log('error', err)
-        });
+        });*/
 }
 
 function cleanOutData(responseJson) {
 
-    const data = responseJson.data; //data in json
+    const data = returned.data
+    //responseJson.data; //data in json
     console.log(data);
     const condensed = [];
     console.log(data[0].desc);
@@ -188,11 +205,11 @@ function displayCarMaintenance(condensed) {
         let mileage = condensed[i].mileage;
 
         $('.displayMaintenance').append(`<tr>
-            <td>${condensed[i].desc}</td>
+            <td class="desc-cell">${condensed[i].desc}</td>
             <td id="displayMileages${i}"></td>
             </tr>`);
         for (let j = 0; j < mileage.length; j++) {
-            $(`#displayMileages${i}`).append(`<td>${mileage[j]}</td>`);
+            $(`#displayMileages${i}`).append(`<td class="miles-cell">${mileage[j]}</td>`);
             console.log(condensed[i].mileage);
         }
     };
