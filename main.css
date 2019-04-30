@@ -242,6 +242,46 @@ section.second{
     text-align: left;
     grid-column: 4/5;
 }
+
+/*Section Three Stylings*/
+.third{
+    text-align: center;
+}
+.third h1{
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+.third p{
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+}
+
+.span-table{
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+/* Table Stylings */
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+tr:nth-child(odd){
+    background-color: #dddddd;
+}
+
+td.desc-cell{
+    max-width: 225px;
+    text-align: left;
+}
+
+td:nth-child(2){
+   border-spacing: 5px;
+}
+
 /*
 .grid-3 {
     display: grid;
