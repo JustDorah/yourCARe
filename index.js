@@ -139,9 +139,12 @@ function displayGenCar(responseJson, milesDriven) {
         $('section .generalInfo').addClass('grid2');
         $('section .generalInfo').removeClass('hidden');
         $('section .errorDisplay').removeClass('hidden');
-        $('section .errorDisplay').append(`  <p class="error"><span><strong> It seems that something is not right...</strong></span><br>
+        $('section .errorDisplay').append(`<p class="error"><span><strong> It seems that something is not right...</strong></span><br>
         Please double check that your VIN is correct. Verify that it is a <strong>17 character</strong> VIN. 
-        A less than 17 character VIN is more than likely from a pre-1981 vehicle. yourCARe can only report on vehicles with a 17 character VIN.</p>`);
+        A less than 17 character VIN is more than likely from a pre-1981 vehicle. yourCARe can only report on vehicles with a 17 character VIN.</p>
+
+        <p class="errorMobile"><span><strong> It seems that something is not right...</strong></span><br>
+        Double check that your VIN is correct.  yourCARe can only report on vehicles with a 17 character VIN.</p>`);
 
         
         //alert("Vin is wrong!");

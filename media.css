@@ -1,0 +1,116 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 436px) {
+    body {
+        font-weight: 500;
+    }
+
+    .heading::after {
+        height: 50vh;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        transition: all 1200ms;
+    }
+
+    .content {
+        top: 5%;
+        margin-top: 5px;
+    }
+
+    .content .logo {
+        height: 140px;
+        width: 60px;
+    }
+
+    .content .text {
+        display: none;
+    }
+
+    .welcomeBtn {
+        display: none;
+    }
+
+/* First section */
+    .first{
+        padding-top: 2rem;
+    }
+    .submitBtn {
+        background-color: #333333;
+        color: #f4f4f4;
+    }
+    .error{
+        display: none;
+    }
+    .errorMobile{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        max-width: 600px;
+    }
+    .errorMobile span{
+        color: red;
+        display: inline-block;
+        margin-bottom: .5em;
+    }
+
+    /* Second section */
+    .grid{
+        grid-template-columns: 1fr;
+    }
+    .grid2, .grid3{
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid3{
+        grid-template-columns: 1fr auto;
+    }
+    .generalInfo, .displayGenInfo{
+        grid-column: 1/2;
+        text-align: center;
+    }
+    .generalInfo .a,
+.displayGenInfo .a{
+    text-align: right;
+    margin-right: 1em;
+    grid-column: 1/2;
+}
+    .generalInfo .b,
+    .displayGenInfo .b{
+    text-align: left;
+    grid-column: 2/3;
+    }
+    
+
+
+@media only screen and (min-width: 600px) {
+    body {
+        background: red;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .example {
+        background: green;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .example {
+        background: blue;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .example {
+        background: orange;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .example {
+        background: pink;
+    }
+}

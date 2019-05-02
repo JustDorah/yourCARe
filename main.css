@@ -12,8 +12,8 @@ body {
     margin: 0;
     color: #ffffff;
     font-family: 'Raleway', sans-serif;
+    min-width: 312px;
 }
-
 
 h1,
 h2,
@@ -86,6 +86,7 @@ img.logo {
 
 .content .title {
     font-size: 2.2rem;
+    font-family: 'Raleway', sans-serif;
 }
 
 .content .text {/* fix do a zindex and a blur frame above all else. on click disappears*/
@@ -208,7 +209,9 @@ input{
     display: inline-block;
     margin-bottom: .5em;
 }
-
+.errorMobile{
+    display: none;
+}
 
 /* SECOND SECTION */
 section.second{
