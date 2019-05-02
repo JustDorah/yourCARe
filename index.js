@@ -55,7 +55,7 @@ function getCarInfo(vin, milesDriven) {
             throw new Error(response.statusText);
         })
         .then(responseJson => {
-            //console.log(responseJson)
+            console.log(responseJson)
             displayGenCar(responseJson, milesDriven);
         })
         .catch(err => {
@@ -72,6 +72,13 @@ function displayGenCar(responseJson, milesDriven) {
     //console.log(results);
 
     //filter out the desired data
+    const errorVariable = function (results) {
+        return results.Variable === 'Error Code';
+    };
+    const errorCode = results.filter(errorVariable)[0];
+    console.log(errorCode.Value, 'manufacturer');
+
+
     const manuVariable = function (results) {
         return results.Variable === 'Manufacturer Name';
     };
@@ -94,19 +101,66 @@ function displayGenCar(responseJson, milesDriven) {
         return results.Variable === 'Model Year';
     };
     const year = results.filter(yrVariable)[0];
-
     //console.log(year.Value, 'year');
     //console.log(milesDriven, 'mileage');
 
-//Remove empty general info
+    if (errorCode.ValueId === '0') {
+        //Remove empty general info
+        $('section .errorDisplay').empty();
+        $('section .generalInfo').addClass('hidden');
+        $('section .generalInfo').removeClass('grid2');
+        //Clear any previous info in display gen info 
+        $('section .displayGenInfo').empty();
+
+        //add grid2 to display gen info
+        $('section .displayGenInfo').addClass('grid3');
+        //display gen info
+        $('.displayGenInfo').removeClass('hidden');
+
+        $('section .displayGenInfo').append(`
+    <div class="a a1"><strong>Manufacturer</strong>:</div> 
+    <div class="b b1"> ${manufacturer.Value}</div>
+    <div class="a a2"><strong>Make</strong>:</div> 
+    <div class="b b2"> ${make.Value}</div>
+    <div class="a a3"><strong>Model</strong>:</div> 
+    <div class="b b3"> ${model.Value}</div>
+    <div class="a a4"><strong>Year</strong>:</div> 
+    <div class="b b4"> ${year.Value}</div>
+    <div class="a a5"> <strong>Mileage</strong>:</div> 
+    <div class="b b5"> ${milesDriven}</div>`);
+
+    } else {
+    //hide displayGenInfo- if it is showing
+        $('section .displayGenInfo').empty();
+        $('section .displayGenInfo').removeClass('grid3');
+        $('.displayGenInfo').addClass('hidden');
+        $('section .errorDisplay').empty();
+
+        $('section .generalInfo').addClass('grid2');
+        $('section .generalInfo').removeClass('hidden');
+        $('section .errorDisplay').removeClass('hidden');
+        $('section .errorDisplay').append(`  <p class="error"><span><strong> It seems that something is not right...</strong></span><br>
+        Please double check that your VIN is correct. Verify that it is a <strong>17 character</strong> VIN. 
+        A less than 17 character VIN is more than likely from a pre-1981 vehicle. yourCARe can only report on vehicles with a 17 character VIN.</p>`);
+
+        
+        //alert("Vin is wrong!");
+
+        //add grid2 to display gen info
+        
+        //display gen info
+        
+    }
+    /*
+    //Remove empty general info
     $('section .generalInfo').addClass('hidden');
     $('section .generalInfo').removeClass('grid2');
-//Clear any previous info in display gen info 
+    //Clear any previous info in display gen info 
     $('section .displayGenInfo').empty();
 
-//add grid2 to display gen info
-$('section .displayGenInfo').addClass('grid3');
-//display gen info
+    //add grid2 to display gen info
+    $('section .displayGenInfo').addClass('grid3');
+    //display gen info
     $('.displayGenInfo').removeClass('hidden');
 
     $('section .displayGenInfo').append(`
@@ -120,6 +174,7 @@ $('section .displayGenInfo').addClass('grid3');
     <div class="b b4"> ${year.Value}</div>
     <div class="a a5"> <strong>Mileage</strong>:</div> 
     <div class="b b5"> ${milesDriven}</div>`);
+    */
 }
 
 //data display from response.js
@@ -138,29 +193,29 @@ function getCarMaintenance(vin, milesDriven) {
         method: 'GET',
         headers
     };
-   
+
     const maintInfoQuery = `vin=${vin}&mileage=${milesDriven}`;
 
     const urlMaint = forNonProductionHelp + maintenanceBaseURL + '?' + maintInfoQuery;
-/*
-    fetch(urlMaint, myInit)
-        .then(response => {
-            if (response.ok) {
+    /*
+        fetch(urlMaint, myInit)
+            .then(response => {
+                if (response.ok) {
 
-                return response.json();
-            }
-            //console.log(response);
-            throw new Error(response);
-        })
-        .then(responseJson => {
-            //passes responseJson to cleanOutData function
-            //Calls cleanOutData function
-            cleanOutData(responseJson);
-            //console.log(responseJson.message.message, '!!!!!');
-        })
-        .catch(err => {
-            console.log('error', err)
-        });*/
+                    return response.json();
+                }
+                //console.log(response);
+                throw new Error(response);
+            })
+            .then(responseJson => {
+                //passes responseJson to cleanOutData function
+                //Calls cleanOutData function
+                cleanOutData(responseJson);
+                //console.log(responseJson.message.message, '!!!!!');
+            })
+            .catch(err => {
+                console.log('error', err)
+            });*/
 }
 
 function cleanOutData(responseJson) {

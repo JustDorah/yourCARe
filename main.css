@@ -14,10 +14,15 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-p,
+
 h1,
 h2,
-h3 {
+h3{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
     margin: 0;
 }
 
@@ -142,7 +147,7 @@ footer{
     padding: 2rem 1rem;
 }
 
-/* VIN/Mileage Entry Section */
+/* FIRST SECTION aka VIN/Mileage Entry Section */
 .first{
     padding-top: 3.5em;
     height: 49vh;
@@ -153,8 +158,10 @@ footer{
 }
 #vinForm{
     max-width: 330px;
-    margin: auto;
-    margin-top: 1em;
+    margin: 1em auto;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em; */
     text-align: left;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -190,6 +197,20 @@ input{
     color: #f4f4f4;
 }
 
+.error{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    max-width: 600px;
+}
+.error span{
+    color: red;
+    display: inline-block;
+    margin-bottom: .5em;
+}
+
+
+/* SECOND SECTION */
 section.second{
     height: 49vh;
 }
