@@ -264,7 +264,7 @@ function displayCarMaintenance(condensed) {
 
         $('.displayMaintenance').append(`<tr>
             <td class="desc-cell">${condensed[i].desc}</td>
-            <td id="displayMileages${i}"></td>
+            <td class="align" id="displayMileages${i}"></td>
             </tr>`);
         for (let j = 0; j < mileage.length; j++) {
             $(`#displayMileages${i}`).append(`<td class="miles-cell">${mileage[j]}</td>`);

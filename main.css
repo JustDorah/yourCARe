@@ -243,13 +243,13 @@ section.second{
 
 .grid2{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 1fr 1fr auto auto 1fr 1fr;
     grid-template-rows: repeat(4, 20%);
     align-items: center;
 }
 .grid3{
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr auto auto 1fr 1fr;
     grid-template-rows: repeat(4, 20%);
     align-items: center;
 }
@@ -302,6 +302,7 @@ section.second{
 table{
     margin-left: auto;
     margin-right: auto;
+    border-spacing: none;
 }
 tr:nth-child(odd){
     background-color: #dddddd;
@@ -312,9 +313,7 @@ td.desc-cell{
     text-align: left;
 }
 
-td:nth-child(2){
-   border-spacing: 5px;
-}
+
 
 /*
 .grid-3 {
@@ -339,9 +338,11 @@ td:nth-child(2){
 
 
 footer {
-    padding: 1rem;
+    padding: 1rem;    
 }
-
+i{
+    margin: 0em 1em;
+}
 /* Small screens
 @media(max-width: 400px) {
     .heading::after {
